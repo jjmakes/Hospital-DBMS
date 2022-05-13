@@ -40,30 +40,59 @@ See `tables.sql` for table creation statements and `sample-data.sql` for insert 
 
 ## Queries, Updates & Deletes
 Selecting employee names and salary and grouping by position.
-
+```
+SELECT 		Fname, Lname, AVG(Salary)
+FROM 		EMPLOYEES
+GROUP BY 	Position;
+```
 ![group_by](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/group_by.png)
 
 Selecting the first and last names of employees of which have a salary greater than that owned by Employee ID 42916038.
-
+```
+SELECT 	Fname, Lname
+FROM 	EMPLOYEES
+WHERE 	Salary > ALL(SELECT Salary
+    				 FROM	EMPLOYEES
+ 		    		 WHERE	EMP_ID=42916038);
+```
 ![owned_patient](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/owned_patient.png)
 
 Select employees that are handling more than 1 case.
-
+```
+SELECT 	Emp_ID, COUNT(*)
+FROM    CASES AS C, HANDLES AS H
+WHERE	C.Case_ID = H.Case_ID
+GROUP 	BY	Emp_ID
+HAVING	COUNT(*) > 1;
+```
 ![handles_case](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/handles_case.png)
 
 Select departments where number of rooms exceeds the amount of stretchers assigned to the department.
-
+```
+SELECT	Dept_ID, Available_Rooms, Location
+FROM    DEPARTMENTS
+WHERE	Dept_ID IN (SELECT	Dept_ID
+                    FROM	HOSPITAL_RESOURCES
+                    WHERE	Available_Rooms > Supply_Count AND Supply_Name = "Stretcher");
+```
 ![exceeds](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/exceeds.png)
 
 Update a patients insurance to "Medicare".
-
+```
+UPDATE PATIENTS
+SET    Insurance = 'medicare'
+WHERE  Patient_ID = 45100;
+```
 ![update](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/update.png)
 
 Remove employee from all cases.
-
+```
+DELETE FROM HANDLES
+WHERE    	Emp_ID = 42916308;
+```
 ![delete](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/delete.png)
 
 ## Views
-Create a view for management to see a list of employees who make more than $40,000 a year to assist mailing benefits information.
+Below is a view for management to see a list of employees who make more than $40,000 a year to assist mailing benefits information. (see `view.png` for creation statement)
 
 ![view](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/view.png)
