@@ -1,9 +1,17 @@
 # Hospital DBMS
 This project is an example DBMS created for a fictitous hospital for the use of the facility's management to handle staff, patients and resources.
 
-## Table of Contents
+1. [System Requirements](#req)
+2. [Entity-Relationship Diagram](#erd)
+3. [Relational Logical Database Design](#rld)
+4. [Tables & Sample Records](#tsr)
+5. [Queries, Updates & Deletes](#rud)
+6. [Views](#view)
 
-## Summary of System Requirements
+<div id='req'/>
+
+## System Requirements
+
 ### Departments & Resources
 The hospital consists of several distinct departments of which different types of employees are assigned to. Each department is supported by a budget and set of hospital resources which are assigned to patients on a case by case basis. The budget determines the number of employees and amount of hospital resources available. Each department is of its own type and contains data including location, available rooms, list and number of employees, list and number of patients. They keep track of their available resources (medical equipment, patient room necessities, office supplies, pharmaceuticals, etc.). A budget is also designated, which determines the resources and staff available.
 
@@ -13,10 +21,18 @@ Each employee is designated a schedule and assigned a number of patients and cas
 ### Patients
 The database holds a record of each patient’s case. Doctors and nurses are assigned to handle a particular case determined by their specialization. The case includes information such as the patient name and ID, room number, doctor/nurse name, hospital resources needed/used, prescriptions, actions taken by personnel, and who the patient was admitted by. Patient documentation is archived with necessary information (name, date of birth, insurance, medical history, current case, prior cases, admittance date and discharge date). Depending on their condition, a patient will be housed under a specific department.
 
+<div id='erd'/>
+
 ## Entity-Relationship Diagram
 ![entity-relationship diagram](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/entity_diagram.png)
+
+<div id='rld'/>
+
 ## Relational Logical Database Design
-![relational logic database design](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/relational-design.png)
+![relational logic database design](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/relational_design.png)
+
+<div id='tsr'/>
+
 ## Tables & Sample Records
 See `tables.sql` for table creation statements and `sample-data.sql` for insert statements.
 ### Departments
@@ -31,12 +47,12 @@ See `tables.sql` for table creation statements and `sample-data.sql` for insert 
 ![patients](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/patients.png)
 ### Cases
 ![cases](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/cases.png)
-
 ### Handles
 ![handles](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/handles.png)
 ### Housed Under
 ![housed_under](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/housed_under.png)
 
+<div id='rud'/>
 
 ## Queries, Updates & Deletes
 Selecting employee names and salary and grouping by position.
@@ -91,6 +107,8 @@ DELETE FROM HANDLES
 WHERE    	Emp_ID = 42916308;
 ```
 ![delete](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/delete.png)
+
+<div id='view'/>
 
 ## Views
 Below is a view for management to see a list of employees who make more than $40,000 a year to assist mailing benefits information. (see `view.png` for creation statement)
