@@ -40,23 +40,30 @@ See `tables.sql` for table creation statements and `sample-data.sql` for insert 
 
 ## Queries, Updates & Deletes
 Selecting employee names and salary and grouping by position.
+
 ![group_by](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/group_by.png)
 
 Selecting the first and last names of employees of which have a salary greater than that owned by Employee ID 42916038.
+
 ![owned_patient](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/owned_patient.png)
 
 Select employees that are handling more than 1 case.
+
 ![handles_case](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/handles_case.png)
 
 Select departments where number of rooms exceeds the amount of stretchers assigned to the department.
+
 ![exceeds](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/exceeds.png)
 
 Update a patients insurance to "Medicare".
+
 ![update](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/update.png)
 
 Remove employee from all cases.
+
 ![delete](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/delete.png)
 
 ## Views
 Create a view for management to see a list of employees who make more than $40,000 a year to assist mailing benefits information.
+
 ![view](https://github.com/jjmakely/Hospital-DBMS/blob/master/img/view.png)
