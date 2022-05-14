@@ -1,5 +1,5 @@
 # Hospital DBMS
-This project is an example DBMS created for a fictitous hospital for the use of the facility's management to handle staff, patients and resources.
+An example DBMS created for a fictitous hospital for the use of the facility's management to handle staff, patients and resources.
 
 1. [System Requirements](#req)
 2. [Entity-Relationship Diagram](#erd)
