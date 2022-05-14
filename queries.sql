@@ -1,4 +1,4 @@
---Grouping Employees by position
+--Selecting employee names and salary and grouping by position
 SELECT 		Fname, Lname, AVG(Salary)
 FROM 		EMPLOYEES
 GROUP BY 	Position;
